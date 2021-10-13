@@ -21,6 +21,9 @@ namespace ML_lab1_Generarea_setului_de_date
         {
             var generator = new GeneratorPuncte();
             var points = generator.generate(4000);
+            (new FileWriter("puncte.txt")).writePoints(points);
+            // write to file -> new class
+            //show on screen -> new class
 
         }
     }
