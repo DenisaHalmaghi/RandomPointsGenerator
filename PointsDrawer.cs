@@ -16,7 +16,7 @@ namespace ML_lab1_Generarea_setului_de_date
         }
         public void draw(List<(int X, int Y, Zone zone)> points)
         {
-            canvas.Graphics.FillRectangle(new SolidBrush(Color.Blue), 50, 50, 10, 10);
+            canvas.Graphics.DrawRectangle(new Pen(Color.Black), 0, 0, Constants.MAX * 2, Constants.MAX * 2);
 
             foreach (var point in points)
             {

@@ -21,19 +21,14 @@ namespace ML_lab1_Generarea_setului_de_date
             (new FileWriter("puncte.txt")).writePoints(generatedPoints);
         }
 
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-            // (new PointsDrawer(panel1)).draw(generatedPoints);
-            //show on screen -> new class
-        }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             (new PointsDrawer(e)).draw(generatedPoints);
-            //e.Graphics.FillRectangle(new SolidBrush(Color.Blue), 50 * 2, 50 * 2, 2, 2);
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

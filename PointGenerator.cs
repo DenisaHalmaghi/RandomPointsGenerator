@@ -9,9 +9,14 @@ namespace ML_lab1_Generarea_setului_de_date
     {
 
 
-        Zone zone1 = new Zone((50, 50), (20, 20), Color.Red);
-
+        Zone zone1 = new Zone((0, 50), (20, 20), Color.Red);
         Zone zone2 = new Zone((-150, -150), (30, 30), Color.Blue);
+
+        Zone zone3 = new Zone((-200, 200), (40, 40), Color.DarkGreen);
+        Zone zone4 = new Zone((50, -100), (25, 25), Color.Purple);
+
+        Zone zone5 = new Zone((200, 100), (50, 50), Color.Magenta);
+
         List<Zone> zones = new List<Zone>();
         Random r = new Random();
         List<(int X, int Y, Zone zone)> points = new List<(int, int, Zone zone)>();
@@ -20,6 +25,9 @@ namespace ML_lab1_Generarea_setului_de_date
         {
             zones.Add(zone1);
             zones.Add(zone2);
+            zones.Add(zone3);
+            zones.Add(zone4);
+            zones.Add(zone5);
         }
 
         public List<(int X, int Y, Zone zone)> generate(int pointCount)
@@ -47,7 +55,7 @@ namespace ML_lab1_Generarea_setului_de_date
             double threshold;
             do
             {
-                coordinate = r.Next(Constants.MIN, Constants.MAX);
+                coordinate = r.Next(Constants.MIN, Constants.MAX + 1);
                 var m = zone.Centre.x;
                 var sigma = zone.Sigma.x;
                 if (axis.ToLower() == "y")
