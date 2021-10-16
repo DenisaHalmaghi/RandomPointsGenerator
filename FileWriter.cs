@@ -12,7 +12,7 @@ namespace ML_lab1_Generarea_setului_de_date
             string[] paths = { Environment.CurrentDirectory, @"..\..\..\", path };
             filePath = Path.GetFullPath(Path.Combine(paths));
         }
-        public void writePoints(List<(int X, int Y)> points)
+        public void writePoints(List<(int X, int Y, Zone zone)> points)
         {
             using (StreamWriter writer = new StreamWriter(filePath))
             {

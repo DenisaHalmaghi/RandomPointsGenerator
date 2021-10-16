@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ML_lab1_Generarea_setului_de_date
 {
-    class GeneratorPuncte
+    class PointGenerator
     {
         const int MAX = 300;
         const int MIN = -300;
@@ -13,14 +13,14 @@ namespace ML_lab1_Generarea_setului_de_date
         Zone zone1 = new Zone((50, 50), (20, 20), Color.Red);
         List<Zone> zones = new List<Zone>();
         Random r = new Random();
-        List<(int X, int Y)> points = new List<(int, int)>();
+        List<(int X, int Y, Zone zone)> points = new List<(int, int, Zone zone)>();
 
-        public GeneratorPuncte()
+        public PointGenerator()
         {
             zones.Add(zone1);
         }
 
-        public List<(int X, int Y)> generate(int pointCount)
+        public List<(int X, int Y, Zone zone)> generate(int pointCount)
         {
 
             int zoneIndex = 0;
@@ -32,7 +32,7 @@ namespace ML_lab1_Generarea_setului_de_date
                 zoneIndex = r.Next(0, zones.Count - 1);
                 zone = zones[zoneIndex];
                 //generate a point
-                points.Add((generateCoordinate(zone), generateCoordinate(zone, "Y")));
+                points.Add((generateCoordinate(zone), generateCoordinate(zone, "Y"), zone));
             }
 
             return points;
