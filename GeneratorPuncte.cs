@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace ML_lab1_Generarea_setului_de_date
@@ -9,7 +10,7 @@ namespace ML_lab1_Generarea_setului_de_date
         const int MAX = 300;
         const int MIN = -300;
 
-        Zone zone1 = new Zone((50, 100));
+        Zone zone1 = new Zone((50, 50), (20, 20), Color.Red);
         List<Zone> zones = new List<Zone>();
         Random r = new Random();
         List<(int X, int Y)> points = new List<(int, int)>();
@@ -45,12 +46,12 @@ namespace ML_lab1_Generarea_setului_de_date
             do
             {
                 coordinate = r.Next(MIN, MAX);
-                var middle = zone.middle().X;
-                var sigma = zone.sigma().X;
+                var middle = zone.Centre.x;
+                var sigma = zone.Sigma.x;
                 if (axis.ToLower() == "y")
                 {
-                    middle = zone.middle().Y;
-                    sigma = zone.sigma().Y;
+                    middle = zone.Centre.y;
+                    sigma = zone.Sigma.y;
                 }
                 probability = gauss(coordinate, middle, sigma);
                 threshold = r.NextDouble();

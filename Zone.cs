@@ -7,22 +7,19 @@ namespace ML_lab1_Generarea_setului_de_date
 {
     class Zone
     {
-        (int min, int max) limits;
-        public Zone((int min, int max) limits)
+        (int x, int y) _centre;
+        (int x, int y) _sigma;
+        Color _color;
+
+        public Zone((int, int) centre, (int, int) sigma, Color color)
         {
-            this.limits = limits;
+            _centre = centre;
+            _sigma = sigma;
+            _color = color;
         }
 
-        public (int X, int Y) middle()
-        {
-            int middle = (limits.max - limits.min) / 2;
-            return (middle, middle);
-        }
-
-        public (int X, int Y) sigma()
-        {
-            var middle = this.middle();
-            return (limits.max - middle.X, limits.max - middle.Y);
-        }
+        public Color Color { get => _color; }
+        public (int x, int y) Sigma { get => _sigma; }
+        public (int x, int y) Centre { get => _centre; }
     }
 }
