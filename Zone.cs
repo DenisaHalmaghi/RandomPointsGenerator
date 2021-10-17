@@ -10,16 +10,19 @@ namespace ML_lab1_Generarea_setului_de_date
         (int x, int y) _centre;
         (int x, int y) _sigma;
         Color _color;
+        string _name;
 
-        public Zone((int, int) centre, (int, int) sigma, Color color)
+        public Zone(string name, (int, int) centre, (int, int) sigma, Color color)
         {
             _centre = centre;
             _sigma = sigma;
             _color = color;
+            _name = name;
         }
 
         public Color Color { get => _color; }
         public (int x, int y) Sigma { get => _sigma; }
         public (int x, int y) Centre { get => _centre; }
+        public string Name { get => _name; }
     }
 }

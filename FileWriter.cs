@@ -18,7 +18,7 @@ namespace ML_lab1_Generarea_setului_de_date
             {
                 foreach (var point in points)
                 {
-                    writer.WriteLine($"{point.X} {point.Y}");
+                    writer.WriteLine($"{point.X} {point.Y} {point.zone.Name}");
                 }
             }
         }

@@ -8,14 +8,11 @@ namespace ML_lab1_Generarea_setului_de_date
     class PointGenerator
     {
 
-
-        Zone zone1 = new Zone((0, 50), (20, 20), Color.Red);
-        Zone zone2 = new Zone((-150, -150), (30, 30), Color.Blue);
-
-        Zone zone3 = new Zone((-200, 200), (40, 40), Color.DarkGreen);
-        Zone zone4 = new Zone((50, -100), (25, 25), Color.Purple);
-
-        Zone zone5 = new Zone((200, 100), (50, 50), Color.Magenta);
+        Zone zone1 = new Zone("1", (0, 50), (20, 20), Color.Red);
+        Zone zone2 = new Zone("2", (-150, -150), (30, 30), Color.Blue);
+        Zone zone3 = new Zone("3", (-200, 200), (40, 40), Color.DarkGreen);
+        Zone zone4 = new Zone("4", (50, -100), (25, 25), Color.Purple);
+        Zone zone5 = new Zone("5", (200, 100), (50, 50), Color.Magenta);
 
         List<Zone> zones = new List<Zone>();
         Random r = new Random();
